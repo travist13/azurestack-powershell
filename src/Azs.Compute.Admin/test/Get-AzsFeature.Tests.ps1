@@ -3,6 +3,7 @@ if (-Not (Test-Path -Path $loadEnvPath)) {
     $loadEnvPath = Join-Path $PSScriptRoot '..\loadEnv.ps1'
 }
 . ($loadEnvPath)
+
 $TestRecordingFile = Join-Path $PSScriptRoot 'Get-AzsFeature.Recording.json'
 $currentPath = $PSScriptRoot
 while(-not $mockingPath) {
@@ -12,15 +13,17 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Get-AzsFeature' {
-    It 'List' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
+    It 'TestGetFeature' -Skip:$('TestGetFeature' -in $global:SkippedTests) {
+        $global:TestName = 'TestGetFeature'
 
-    It 'Get' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
+        $feature = Get-AzsFeature -Name Microsoft.Compute.EmergencyVMAccess -Location $env.Location -SubscriptionId $env.SubscriptionId
 
-    It 'GetViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+        $feature | Should Not Be $null
+        $feature.Id | Should Not Be $null
+        $feature.Name | Should Be Microsoft.Compute.EmergencyVMAccess
+        $feature.Type | Should Be Microsoft.Compute.Admin/locations/features
+        $feature.Location | Should Be $env.Location
+        $feature.EnabledTenantSubscriptionId | Should Not Be $null
+        $feature.GlobalFeatureSettingGlobalFeatureState | Should Not Be $null
     }
 }
