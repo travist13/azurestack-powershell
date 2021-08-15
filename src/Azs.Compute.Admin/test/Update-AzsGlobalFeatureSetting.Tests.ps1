@@ -12,19 +12,24 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Update-AzsGlobalFeatureSetting' {
-    It 'UpdateExpanded' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
+    It 'TestUpdateGlobalFeatureSetting' -Skip:$('TestUpdateGlobalFeatureSetting' -in $global:SkippedTests) {
+        $global:TestName = 'TestUpdateGlobalFeatureSetting'
 
-    It 'Update' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
+        $feature = Get-AzsFeature -Name Microsoft.Compute.EmergencyVMAccess -Location $env.Location -SubscriptionId $env.SubscriptionId
+        $originalSetting = $feature.GlobalFeatureSettingGlobalFeatureState
 
-    It 'UpdateViaIdentityExpanded' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
+        Update-AzsGlobalFeatureSetting  -FeatureName Microsoft.Compute.EmergencyVMAccess -GlobalFeatureState Disabled -Location $env.Location -SubscriptionId $env.SubscriptionId
+        $feature = Get-AzsFeature -Name Microsoft.Compute.EmergencyVMAccess -Location $env.Location -SubscriptionId $env.SubscriptionId
+        $feature.GlobalFeatureSettingGlobalFeatureState | Should Be Disabled
 
-    It 'UpdateViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+        Update-AzsGlobalFeatureSetting  -FeatureName Microsoft.Compute.EmergencyVMAccess -GlobalFeatureState Enabled -Location $env.Location -SubscriptionId $env.SubscriptionId
+        $feature = Get-AzsFeature -Name Microsoft.Compute.EmergencyVMAccess -Location $env.Location -SubscriptionId $env.SubscriptionId
+        $feature.GlobalFeatureSettingGlobalFeatureState | Should Be Enabled
+
+        Update-AzsGlobalFeatureSetting  -FeatureName Microsoft.Compute.EmergencyVMAccess -GlobalFeatureState TenantSubscriptionLevel -Location $env.Location -SubscriptionId $env.SubscriptionId
+        $feature = Get-AzsFeature -Name Microsoft.Compute.EmergencyVMAccess -Location $env.Location -SubscriptionId $env.SubscriptionId
+        $feature.GlobalFeatureSettingGlobalFeatureState | Should Be TenantSubscriptionLevel
+
+        Update-AzsGlobalFeatureSetting  -FeatureName Microsoft.Compute.EmergencyVMAccess -GlobalFeatureState $originalSetting -Location $env.Location -SubscriptionId $env.SubscriptionId
     }
 }
