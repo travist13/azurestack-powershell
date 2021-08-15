@@ -12,19 +12,14 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Enable-AzsTenantSubscriptionFeature' {
-    It 'EnableExpanded' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
+    It 'TestEnableTenantSubscriptionFeature' -Skip:$('TestEnableTenantSubscriptionFeature' -in $global:SkippedTests) {
+        $global:TestName = 'TestEnableTenantSubscriptionFeature'
 
-    It 'Enable' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'EnableViaIdentityExpanded' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'EnableViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+        $tenantSubscriptionId = [guid]::NewGuid().ToString()
+        $feature = Get-AzsFeature -Name Microsoft.Compute.EmergencyVMAccess -Location $env.Location
+        $feature.EnabledTenantSubscriptionId[-1] | Should Not Be $tenantSubscriptionId
+        Enable-AzsTenantSubscriptionFeature  -TenantSubscriptionId $tenantSubscriptionId -FeatureName Microsoft.Compute.EmergencyVMAccess -Location $env.Location -SubscriptionId $env.SubscriptionId
+        $feature = Get-AzsFeature -Name Microsoft.Compute.EmergencyVMAccess -Location $env.Location -SubscriptionId $env.SubscriptionId
+        $feature.EnabledTenantSubscriptionId[-1] | Should Be $tenantSubscriptionId
     }
 }
