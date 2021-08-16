@@ -1,0 +1,158 @@
+{
+  "Disable-AzsTenantSubscriptionFeature+[NoContext]+TestDisableTenantSubscriptionFeature+$GET+https://management.azure.com/subscriptions/190134bc-f9c8-4986-881a-c90ecdb67f82/providers/Microsoft.Compute.Admin/locations/local/features/Microsoft.Compute.EmergencyVMAccess?api-version=2020-11-01+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://adminmanagement.local.azurestack.external/subscriptions/190134bc-f9c8-4986-881a-c90ecdb67f82/providers/Microsoft.Compute.Admin/locations/local/features/Microsoft.Compute.EmergencyVMAccess?api-version=2020-11-01",
+      "Content": null,
+      "isContentBase64": false,
+      "Headers": {
+        "x-ms-unique-id": [ "445" ],
+        "x-ms-client-request-id": [ "08e37ff4-5631-45b0-8ee1-5f42e3d8f8af" ],
+        "CommandName": [ "Get-AzsFeature" ],
+        "FullCommandName": [ "Get-AzsFeature_Get" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Pragma": [ "no-cache" ],
+        "x-ms-correlation-request-id": [ "0367a972-a3bb-4945-9d7c-84b5f9013c9b" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "14586" ],
+        "x-ms-request-id": [ "0367a972-a3bb-4945-9d7c-84b5f9013c9b" ],
+        "x-ms-routing-request-id": [ "LOCAL:20210816T185955Z:0367a972-a3bb-4945-9d7c-84b5f9013c9b" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Cache-Control": [ "no-cache" ],
+        "Date": [ "Mon, 16 Aug 2021 18:59:55 GMT" ],
+        "Server": [ "Microsoft-HTTPAPI/2.0" ],
+        "WWW-Authenticate": [ "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvyJit0dvd1FHZDSrIM8F4zN1HdCTHSXpuh8glsnEkK3R3lTxsw1yJImDC7aN8URXppEvhCBn6PXBaNW1PgPd46cSKVyl0Bgb5x6uMAQ3+DW7GxDblI08s7sLo0z0chG4QonRVY7k6KLDEadiuOvLW" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "1068" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"id\":\"/subscriptions/190134bc-f9c8-4986-881a-c90ecdb67f82/providers/Microsoft.Compute.Admin/locations/local/features/Microsoft.Compute.EmergencyVMAccess\",\"name\":\"Microsoft.Compute.EmergencyVMAccess\",\"type\":\"Microsoft.Compute.Admin/locations/features\",\"location\":\"local\",\"properties\":{\"featureName\":\"Microsoft.Compute.EmergencyVMAccess\",\"globalFeatureSettings\":{\"globalFeatureState\":\"TenantSubscriptionLevel\"},\"enabledTenantSubscriptionIds\":[\"e8e2d9e1-e8d8-4a4c-942e-57bb279613b6\",\"b958fb19-a849-4739-af90-b2065efb14bd\",\"77a37fc2-c69a-4dee-8a5f-96fa959b5db6\",\"0017860e-fbad-4c83-b880-a6feecb7ec6e\",\"b39c0482-0271-49ed-8dd3-025479233c5b\",\"e6269934-5ace-4bb9-96d6-7df76e66bb19\",\"0c9daacc-a597-4495-87bf-b69a02b7d725\",\"07feadd5-16f4-4efa-a72d-73278e562bc8\",\"8d787cb3-4ba5-493f-a832-376535778302\",\"729cb079-a0e5-4008-816c-6dda05943868\",\"0cad107b-30dc-4887-9cdc-4203a54f62e7\",\"f3ae8860-8ffb-4d9d-9bc7-2a0313aa0066\",\"b07e9636-f59e-466a-81b4-24e5aeab04f4\",\"fcec044d-c936-4469-a8b3-0330f70b4d54\",\"f40d983c-fd9f-4d48-b264-cb387aedcbcf\",\"ec7bd8e9-c014-448e-b877-5d62650242a3\"]}}",
+      "isContentBase64": false
+    }
+  },
+  "Disable-AzsTenantSubscriptionFeature+[NoContext]+TestDisableTenantSubscriptionFeature+$POST+https://management.azure.com/subscriptions/190134bc-f9c8-4986-881a-c90ecdb67f82/providers/Microsoft.Compute.Admin/locations/local/features/Microsoft.Compute.EmergencyVMAccess/enableTenantSubscriptionFeature?api-version=2020-11-01+2": {
+    "Request": {
+      "Method": "POST",
+      "RequestUri": "https://management.azure.com/subscriptions/190134bc-f9c8-4986-881a-c90ecdb67f82/providers/Microsoft.Compute.Admin/locations/local/features/Microsoft.Compute.EmergencyVMAccess/enableTenantSubscriptionFeature?api-version=2020-11-01",
+      "Content": "{\r\n  \"tenantSubscriptionId\": \"abcd063e-b2a1-431c-a126-0b81cb64c1d8\"\r\n}",
+      "isContentBase64": false,
+      "Headers": {
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json" ],
+        "Content-Length": [ "70" ]
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Pragma": [ "no-cache" ],
+        "x-ms-correlation-request-id": [ "0640f648-3d0a-47e4-b2e3-06d75331488c" ],
+        "x-ms-ratelimit-remaining-subscription-writes": [ "1183" ],
+        "x-ms-request-id": [ "0640f648-3d0a-47e4-b2e3-06d75331488c" ],
+        "x-ms-routing-request-id": [ "LOCAL:20210816T185955Z:0640f648-3d0a-47e4-b2e3-06d75331488c" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Cache-Control": [ "no-cache" ],
+        "Date": [ "Mon, 16 Aug 2021 18:59:55 GMT" ],
+        "Server": [ "Microsoft-HTTPAPI/2.0" ],
+        "WWW-Authenticate": [ "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvxThquCjJ8l41eQpexoNpgme5jZoNmXn2r95QOsA2c9ERoFWAO9YUBCyOLKzK+gjRe9K9BXB1n2XCSNXxUIm4+QmgrlNCCvz5we9CEU4+hIf/ieyz0YPzjTZxA04CZrGNfvkcHnvtYYw2B+vY61Gx" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "0" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": null,
+      "isContentBase64": false
+    }
+  },
+  "Disable-AzsTenantSubscriptionFeature+[NoContext]+TestDisableTenantSubscriptionFeature+$POST+https://management.azure.com/subscriptions/190134bc-f9c8-4986-881a-c90ecdb67f82/providers/Microsoft.Compute.Admin/locations/local/features/Microsoft.Compute.EmergencyVMAccess/disableTenantSubscriptionFeature?api-version=2020-11-01+3": {
+    "Request": {
+      "Method": "POST",
+      "RequestUri": "https://management.azure.com/subscriptions/190134bc-f9c8-4986-881a-c90ecdb67f82/providers/Microsoft.Compute.Admin/locations/local/features/Microsoft.Compute.EmergencyVMAccess/disableTenantSubscriptionFeature?api-version=2020-11-01",
+      "Content": "{\r\n  \"tenantSubscriptionId\": \"abcd063e-b2a1-431c-a126-0b81cb64c1d8\"\r\n}",
+      "isContentBase64": false,
+      "Headers": {
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json" ],
+        "Content-Length": [ "70" ]
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Pragma": [ "no-cache" ],
+        "x-ms-correlation-request-id": [ "46ae7730-29a0-40a5-919b-6ae1f2959489" ],
+        "x-ms-ratelimit-remaining-subscription-writes": [ "1182" ],
+        "x-ms-request-id": [ "46ae7730-29a0-40a5-919b-6ae1f2959489" ],
+        "x-ms-routing-request-id": [ "LOCAL:20210816T185955Z:46ae7730-29a0-40a5-919b-6ae1f2959489" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Cache-Control": [ "no-cache" ],
+        "Date": [ "Mon, 16 Aug 2021 18:59:55 GMT" ],
+        "Server": [ "Microsoft-HTTPAPI/2.0" ],
+        "WWW-Authenticate": [ "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv0klPJ1rN0Cu7u6lEDXWcxvIc/1f/Z4/ullt+hUHRcKc2c+tiJY/dxGmXhY+RTtG90Ny5nmwdIi8tqy9AgZojNhY6OM/qR54iQ2wdvKC4zhAnzFZh8kS161I6adV/dLWqAxEJyzjb8n6da1N0qhFh" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "0" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": null,
+      "isContentBase64": false
+    }
+  },
+  "Disable-AzsTenantSubscriptionFeature+[NoContext]+TestDisableTenantSubscriptionFeature+$GET+https://management.azure.com/subscriptions/190134bc-f9c8-4986-881a-c90ecdb67f82/providers/Microsoft.Compute.Admin/locations/local/features/Microsoft.Compute.EmergencyVMAccess?api-version=2020-11-01+4": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://adminmanagement.local.azurestack.external/subscriptions/190134bc-f9c8-4986-881a-c90ecdb67f82/providers/Microsoft.Compute.Admin/locations/local/features/Microsoft.Compute.EmergencyVMAccess?api-version=2020-11-01",
+      "Content": null,
+      "isContentBase64": false,
+      "Headers": {
+        "x-ms-unique-id": [ "448" ],
+        "x-ms-client-request-id": [ "f0c8b4b7-5d40-46f9-b25b-819b0f3ed100" ],
+        "CommandName": [ "Get-AzsFeature" ],
+        "FullCommandName": [ "Get-AzsFeature_Get" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Pragma": [ "no-cache" ],
+        "x-ms-correlation-request-id": [ "1d47984d-7d88-44d5-8534-5994d6ea4260" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "14585" ],
+        "x-ms-request-id": [ "1d47984d-7d88-44d5-8534-5994d6ea4260" ],
+        "x-ms-routing-request-id": [ "LOCAL:20210816T185956Z:1d47984d-7d88-44d5-8534-5994d6ea4260" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Cache-Control": [ "no-cache" ],
+        "Date": [ "Mon, 16 Aug 2021 18:59:55 GMT" ],
+        "Server": [ "Microsoft-HTTPAPI/2.0" ],
+        "WWW-Authenticate": [ "oYG3MIG0oAMKAQChCwYJKoZIgvcSAQICooGfBIGcYIGZBgkqhkiG9xIBAgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv7O2Bwo2leE2HH8ZSfv2j7kzazOsWbjRB075zKAk7lqIVAp4Th3mcDjMp+EgopvB/wJ/0wNr4ZAqhMdEP3HB6Oi9UPJ8Vzu/g8iSZ6Fa2Z7xYLXrkbfyiOtd9nz+wE6Xx61NT46JtvElq5iPFecXg" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "1068" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"id\":\"/subscriptions/190134bc-f9c8-4986-881a-c90ecdb67f82/providers/Microsoft.Compute.Admin/locations/local/features/Microsoft.Compute.EmergencyVMAccess\",\"name\":\"Microsoft.Compute.EmergencyVMAccess\",\"type\":\"Microsoft.Compute.Admin/locations/features\",\"location\":\"local\",\"properties\":{\"featureName\":\"Microsoft.Compute.EmergencyVMAccess\",\"globalFeatureSettings\":{\"globalFeatureState\":\"TenantSubscriptionLevel\"},\"enabledTenantSubscriptionIds\":[\"e8e2d9e1-e8d8-4a4c-942e-57bb279613b6\",\"b958fb19-a849-4739-af90-b2065efb14bd\",\"77a37fc2-c69a-4dee-8a5f-96fa959b5db6\",\"0017860e-fbad-4c83-b880-a6feecb7ec6e\",\"b39c0482-0271-49ed-8dd3-025479233c5b\",\"e6269934-5ace-4bb9-96d6-7df76e66bb19\",\"0c9daacc-a597-4495-87bf-b69a02b7d725\",\"07feadd5-16f4-4efa-a72d-73278e562bc8\",\"8d787cb3-4ba5-493f-a832-376535778302\",\"729cb079-a0e5-4008-816c-6dda05943868\",\"0cad107b-30dc-4887-9cdc-4203a54f62e7\",\"f3ae8860-8ffb-4d9d-9bc7-2a0313aa0066\",\"b07e9636-f59e-466a-81b4-24e5aeab04f4\",\"fcec044d-c936-4469-a8b3-0330f70b4d54\",\"f40d983c-fd9f-4d48-b264-cb387aedcbcf\",\"ec7bd8e9-c014-448e-b877-5d62650242a3\"]}}",
+      "isContentBase64": false
+    }
+  }
+}
