@@ -4,7 +4,7 @@ if (-Not (Test-Path -Path $loadEnvPath)) {
 }
 . ($loadEnvPath)
 
-$TestRecordingFile = Join-Path $PSScriptRoot 'Get-AzsFeature.Recording.json'
+$TestRecordingFile = Join-Path $PSScriptRoot 'Get-AzsComputeFeature.Recording.json'
 $currentPath = $PSScriptRoot
 while(-not $mockingPath) {
     $mockingPath = Get-ChildItem -Path $currentPath -Recurse -Include 'HttpPipelineMocking.ps1' -File
@@ -12,11 +12,11 @@ while(-not $mockingPath) {
 }
 . ($mockingPath | Select-Object -First 1).FullName
 
-Describe 'Get-AzsFeature' {
-    It 'TestGetFeature' -Skip:$('TestGetFeature' -in $global:SkippedTests) {
-        $global:TestName = 'TestGetFeature'
+Describe 'Get-AzsComputeFeature' {
+    It 'TestGetComputeFeature' -Skip:$('TestGetComputeFeature' -in $global:SkippedTests) {
+        $global:TestName = 'TestGetComputeFeature'
 
-        $feature = Get-AzsFeature -Name Microsoft.Compute.EmergencyVMAccess -Location $env.Location -SubscriptionId $env.SubscriptionId
+        $feature = Get-AzsComputeFeature -Name Microsoft.Compute.EmergencyVMAccess -Location $env.Location -SubscriptionId $env.SubscriptionId
 
         $feature | Should Not Be $null
         $feature.Id | Should Not Be $null
